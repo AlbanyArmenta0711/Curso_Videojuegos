@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://de7g0lo2uvbio"]
+
+[ext_resource type="Script" path="res://catcher/Catcher.gd" id="1_knwda"]
+[ext_resource type="Texture2D" uid="uid://b1egg6ggqgjs3" path="res://assets/catcher.png" id="2_681ud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jx4m"]
+size = Vector2(157, 20)
+
+[node name="Catcher" type="CharacterBody2D"]
+script = ExtResource("1_knwda")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_681ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -66)
+shape = SubResource("RectangleShape2D_8jx4m")
