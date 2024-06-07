@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cddy25ffahvfo"]
+
+[ext_resource type="Script" path="res://objects/falling_object_base/FallingObjectBase.gd" id="1_ygcbw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i16tq"]
+radius = 60.0
+height = 120.0
+
+[node name="FallingObjectBase" type="Area2D"]
+script = ExtResource("1_ygcbw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_i16tq")
