@@ -6,7 +6,7 @@
 [node name="MainLevel" type="Node2D"]
 
 [node name="Catcher" parent="." instance=ExtResource("1_b466k")]
-position = Vector2(989, 995)
+position = Vector2(509, 539)
 
 [node name="FallingFruit" parent="." instance=ExtResource("2_3cpf2")]
-position = Vector2(987, 314)
+position = Vector2(505, 78)
