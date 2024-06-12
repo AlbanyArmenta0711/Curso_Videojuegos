@@ -31,3 +31,8 @@ func set_score_value(score_value: int) -> void:
 	
 func get_score_value() -> int:
 	return _score 
+
+
+func _on_screen_exited():
+	print("Eliminando!")
+	queue_free()
