@@ -42,5 +42,5 @@ func _get_input() -> void :
 		sprite_2d.flip_h = false
 		
 	#Clamp to screen size so character does not get out of screen
-	#position.x = clampf(position.x, 0, get_viewport().size.x)
+	position.x = clampf(position.x, 0, get_viewport().size.x)
 		

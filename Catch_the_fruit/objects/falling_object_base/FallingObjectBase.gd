@@ -7,8 +7,8 @@ const _DIRECTION: Vector2 = Vector2.DOWN
 var _falling_speed: float = 0.0 : set = set_falling_speed , get = get_falling_speed
 var _score: int = 1 : set = set_score_value , get = get_score_value
 
-#Class constructor for defining score of object and falling speed
-func _init(falling_speed: float, score: int):
+#Custom class constructor for defining score of object and falling speed
+func custom_init(falling_speed: float, score: int):
 	_falling_speed = falling_speed
 	_score = score 
 

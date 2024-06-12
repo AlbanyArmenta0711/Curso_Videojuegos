@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bossxyvkv1cq4"]
+[gd_scene load_steps=5 format=3 uid="uid://bossxyvkv1cq4"]
 
 [ext_resource type="PackedScene" uid="uid://de7g0lo2uvbio" path="res://catcher/Catcher.tscn" id="1_b466k"]
 [ext_resource type="PackedScene" uid="uid://clv31a3cy4376" path="res://objects/falling_fruit/falling_fruit.tscn" id="2_3cpf2"]
+[ext_resource type="PackedScene" uid="uid://bp23totf7oifb" path="res://objects/falling_spikes/falling_spikes.tscn" id="3_1qyeq"]
+[ext_resource type="PackedScene" uid="uid://kimr7x2ksjb7" path="res://spawner/spawner.tscn" id="4_jfbo8"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -10,3 +12,9 @@ position = Vector2(509, 539)
 
 [node name="FallingFruit" parent="." instance=ExtResource("2_3cpf2")]
 position = Vector2(505, 78)
+
+[node name="FallingSpikes" parent="." instance=ExtResource("3_1qyeq")]
+position = Vector2(335, 68)
+
+[node name="Spawner" parent="." instance=ExtResource("4_jfbo8")]
+position = Vector2(549, 7)

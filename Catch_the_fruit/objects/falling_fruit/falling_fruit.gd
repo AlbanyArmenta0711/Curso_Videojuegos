@@ -1,12 +1,13 @@
 extends FallingObjectBase
 
+class_name FallingFruit
+
 var _rng = RandomNumberGenerator.new()
 var _fruit_score:int = 5
 
-func _init():
+func _ready():
 	var random_speed = _rng.randf_range(250.0, 450.0)
-	print("New falling speed: " + str(random_speed))
-	super(random_speed, _fruit_score)
+	custom_init(random_speed, _fruit_score)
 
 func _on_falling_fruit_body_entered(body):
 	if body.name == "Catcher":

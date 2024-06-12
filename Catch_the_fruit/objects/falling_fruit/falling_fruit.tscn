@@ -10,5 +10,5 @@ script = ExtResource("2_2jpmm")
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_8ov2a")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_falling_fruit_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
