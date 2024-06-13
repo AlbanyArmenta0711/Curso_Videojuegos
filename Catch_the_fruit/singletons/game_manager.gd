@@ -11,7 +11,9 @@ func _ready():
 func on_fruit_caught(score: int):
 	_score += score
 	print("Has atrapado una fruta! +" + str(_score))
+	SignalManager.on_score_change.emit(_score)
 	
 func on_spikes_caught():
 	_lives -= 1 
 	print("Te has picado! :c x" + str(_lives))
+	SignalManager.on_lives_change.emit(_lives)

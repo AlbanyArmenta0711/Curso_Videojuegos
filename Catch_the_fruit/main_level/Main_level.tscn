@@ -1,20 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bossxyvkv1cq4"]
+[gd_scene load_steps=4 format=3 uid="uid://bossxyvkv1cq4"]
 
 [ext_resource type="PackedScene" uid="uid://de7g0lo2uvbio" path="res://catcher/Catcher.tscn" id="1_b466k"]
-[ext_resource type="PackedScene" uid="uid://clv31a3cy4376" path="res://objects/falling_fruit/falling_fruit.tscn" id="2_3cpf2"]
-[ext_resource type="PackedScene" uid="uid://bp23totf7oifb" path="res://objects/falling_spikes/falling_spikes.tscn" id="3_1qyeq"]
 [ext_resource type="PackedScene" uid="uid://kimr7x2ksjb7" path="res://spawner/spawner.tscn" id="4_jfbo8"]
+[ext_resource type="PackedScene" uid="uid://d16yn2xp2wxmf" path="res://hud/hud.tscn" id="5_i6831"]
 
 [node name="MainLevel" type="Node2D"]
 
 [node name="Catcher" parent="." instance=ExtResource("1_b466k")]
-position = Vector2(509, 539)
-
-[node name="FallingFruit" parent="." instance=ExtResource("2_3cpf2")]
-position = Vector2(505, 78)
-
-[node name="FallingSpikes" parent="." instance=ExtResource("3_1qyeq")]
-position = Vector2(335, 68)
+position = Vector2(558, 622)
 
 [node name="Spawner" parent="." instance=ExtResource("4_jfbo8")]
 position = Vector2(549, 7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("5_i6831")]

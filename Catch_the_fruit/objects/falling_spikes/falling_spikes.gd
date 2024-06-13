@@ -8,4 +8,6 @@ func _ready():
 
 
 func _on_spikes_body_entered(body):
-	SignalManager.on_spikes_caught.emit()
+	if body.name == "Catcher":
+		queue_free()
+		SignalManager.on_spikes_caught.emit()

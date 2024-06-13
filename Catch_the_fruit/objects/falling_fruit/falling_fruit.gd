@@ -11,5 +11,5 @@ func _ready():
 
 func _on_falling_fruit_body_entered(body):
 	if body.name == "Catcher":
-		print("Collided with Catcher")
+		queue_free()
 		SignalManager.on_fruit_caught.emit(_fruit_score)

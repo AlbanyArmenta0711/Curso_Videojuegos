@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://de7g0lo2uvbio"]
 
 [ext_resource type="Script" path="res://catcher/Catcher.gd" id="1_knwda"]
-[ext_resource type="Texture2D" uid="uid://b1egg6ggqgjs3" path="res://assets/catcher.png" id="2_681ud"]
+[ext_resource type="Texture2D" uid="uid://b1egg6ggqgjs3" path="res://assets/sprites/catcher.png" id="2_681ud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jx4m"]
 size = Vector2(157, 20)
