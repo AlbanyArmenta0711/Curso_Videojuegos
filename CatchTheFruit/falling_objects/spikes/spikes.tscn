@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlrpvbk8e0in7"]
+
+[ext_resource type="PackedScene" uid="uid://b0bl3j83xohqv" path="res://falling_objects/falling_object_base.tscn" id="1_xsspu"]
+[ext_resource type="Script" path="res://falling_objects/spikes/spikes.gd" id="2_5bocx"]
+[ext_resource type="Texture2D" uid="uid://thy4u7ihvnt" path="res://assets/sprites/spikes.png" id="3_ck1tn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ge8s2"]
+radius = 84.5281
+
+[node name="Spikes" instance=ExtResource("1_xsspu")]
+script = ExtResource("2_5bocx")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(1.00002, 7.62939e-06)
+scale = Vector2(0.502841, 0.502841)
+texture = ExtResource("3_ck1tn")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_ge8s2")
+
+[connection signal="body_entered" from="." to="." method="_on_spikes_entered"]

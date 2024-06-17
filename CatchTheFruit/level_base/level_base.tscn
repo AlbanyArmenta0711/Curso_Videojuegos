@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://oy426nheues2"]
+
+[ext_resource type="PackedScene" uid="uid://b3pby75usne0j" path="res://player/player.tscn" id="1_d81uv"]
+[ext_resource type="PackedScene" uid="uid://b0ly25dv3jag3" path="res://spawner/spawner.tscn" id="2_eef7a"]
+[ext_resource type="PackedScene" uid="uid://dsrpqyhm8os6c" path="res://hud/HUD.tscn" id="3_j28gp"]
+[ext_resource type="PackedScene" uid="uid://dedwxcwms4fms" path="res://game_over/game_over.tscn" id="4_167hx"]
+
+[node name="LevelBase" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_d81uv")]
+position = Vector2(783, 805)
+
+[node name="Spawner" parent="." instance=ExtResource("2_eef7a")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("3_j28gp")]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("4_167hx")]
+visible = false

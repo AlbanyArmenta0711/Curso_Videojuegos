@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0ly25dv3jag3"]
+
+[ext_resource type="Script" path="res://spawner/spawner.gd" id="1_xdpum"]
+[ext_resource type="PackedScene" uid="uid://dhrx7dow1hswh" path="res://falling_objects/fruit/fruit.tscn" id="2_fs1of"]
+[ext_resource type="PackedScene" uid="uid://dlrpvbk8e0in7" path="res://falling_objects/spikes/spikes.tscn" id="3_tydvl"]
+
+[node name="Spawner" type="Marker2D"]
+script = ExtResource("1_xdpum")
+fruit = ExtResource("2_fs1of")
+spikes = ExtResource("3_tydvl")
+
+[node name="FruitTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpikeTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="FruitTimer" to="." method="_on_fruit_timer_timeout"]
+[connection signal="timeout" from="SpikeTimer" to="." method="_on_spike_timer_timeout"]
