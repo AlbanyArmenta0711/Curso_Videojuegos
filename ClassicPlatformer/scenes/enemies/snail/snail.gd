@@ -9,6 +9,7 @@ const MOVEMENT_SPEED : float = 20.0
 
 enum FACING_DIRECTION  {LEFT = -1, RIGHT = 1}
 var facing : FACING_DIRECTION = FACING_DIRECTION.LEFT
+var destroyed : bool = false 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,9 @@ func _physics_process(delta):
 		
 		if wall_detection.is_colliding() or not floor_detection.is_colliding():
 			flip_me()
+			
+	if not sprite_2d.is_playing() and destroyed: 
+		queue_free()
 		
 func flip_me():
 	sprite_2d.flip_h = !sprite_2d.flip_h
@@ -33,3 +37,9 @@ func flip_me():
 		facing = FACING_DIRECTION.RIGHT
 	else:
 		facing = FACING_DIRECTION.LEFT
+
+
+func _on_hit_box_area_entered(area):
+	print("Aplastado")
+	sprite_2d.animation = "destroy"
+	destroyed = true 

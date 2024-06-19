@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqs4v3lvm17m7"]
+[gd_scene load_steps=9 format=3 uid="uid://bqs4v3lvm17m7"]
 
 [ext_resource type="Script" path="res://scenes/test_level/test_level.gd" id="1_kcrnk"]
 [ext_resource type="Texture2D" uid="uid://1xnshux3va2p" path="res://assets/tiles/Terrain (16x16).png" id="1_vpb22"]
 [ext_resource type="PackedScene" uid="uid://b5g55kwign8ft" path="res://scenes/player_camera/player_camera.tscn" id="2_wlab5"]
 [ext_resource type="PackedScene" uid="uid://cvdnfg1rq6tvw" path="res://scenes/player/player.tscn" id="3_hixws"]
 [ext_resource type="PackedScene" uid="uid://c0cnuocvxfh0p" path="res://scenes/enemies/snail/snail.tscn" id="5_11wc5"]
+[ext_resource type="PackedScene" uid="uid://n1ocbdqletbd" path="res://scenes/hud/hud.tscn" id="6_etkrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2q4p"]
 texture = ExtResource("1_vpb22")
@@ -471,8 +472,12 @@ zoom = Vector2(2, 2)
 player = ExtResource("3_hixws")
 
 [node name="Player" parent="." instance=ExtResource("3_hixws")]
-position = Vector2(167, -159)
+position = Vector2(85, -153)
 scale = Vector2(2.00432, 2)
 
 [node name="Snail" parent="." instance=ExtResource("5_11wc5")]
-position = Vector2(458, -132)
+position = Vector2(229, -89)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("6_etkrg")]

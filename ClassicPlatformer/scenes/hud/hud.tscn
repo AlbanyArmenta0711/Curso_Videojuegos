@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://n1ocbdqletbd"]
+
+[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_adoha"]
+[ext_resource type="Texture2D" uid="uid://b4v8mptvm6wf" path="res://assets/sprites/heart.png" id="1_ekhm2"]
+[ext_resource type="FontFile" uid="uid://dmqd1xflhbt2n" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_ba1xp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jnvs7"]
+font = ExtResource("2_ba1xp")
+font_size = 24
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_adoha")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HeartsContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="H1" type="TextureRect" parent="MarginContainer/HBoxContainer/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("1_ekhm2")
+
+[node name="H2" type="TextureRect" parent="MarginContainer/HBoxContainer/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("1_ekhm2")
+
+[node name="H3" type="TextureRect" parent="MarginContainer/HBoxContainer/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("1_ekhm2")
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Score: 000
+"
+label_settings = SubResource("LabelSettings_jnvs7")
