@@ -50,6 +50,6 @@ texture = ExtResource("1_ekhm2")
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "Score: 000
+text = "Score: 0
 "
 label_settings = SubResource("LabelSettings_jnvs7")

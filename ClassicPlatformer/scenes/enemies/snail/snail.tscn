@@ -136,13 +136,13 @@ size = Vector2(29.3333, 17)
 radius = 10.6667
 height = 34.6667
 
-[node name="Snail" type="CharacterBody2D"]
+[node name="Snail" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_24dy8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_emixk")
-animation = &"destroy"
+animation = &"walk"
 autoplay = "walk"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

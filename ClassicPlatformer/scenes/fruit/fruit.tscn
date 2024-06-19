@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b0ow0xy05gc4f"]
+[gd_scene load_steps=24 format=3 uid="uid://b0ow0xy05gc4f"]
 
 [ext_resource type="Texture2D" uid="uid://c7a12wijxe4d3" path="res://assets/sprites/bananas.png" id="1_j8pp1"]
+[ext_resource type="Script" path="res://scenes/fruit/fruit.gd" id="1_uaw6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rsb4"]
 atlas = ExtResource("1_j8pp1")
@@ -132,11 +133,43 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lttqw"]
 radius = 8.06226
 
+[sub_resource type="Curve" id="Curve_tokh8"]
+_data = [Vector2(0.00475059, 0.994139), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_w7lsg"]
+offsets = PackedFloat32Array(0.524173, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Fruit" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_uaw6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ilyfa")
+autoplay = "default"
 frame_progress = 0.217845
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lttqw")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_tokh8")
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("Gradient_w7lsg")
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

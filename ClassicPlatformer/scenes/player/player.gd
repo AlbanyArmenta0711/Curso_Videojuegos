@@ -78,6 +78,7 @@ func set_state(new_state : PLAYER_STATE):
 			PLAYER_STATE.JUMP:
 				anim_player.play("jump")
 			PLAYER_STATE.HURT:
+				SoundsManager.play_sound(audio_player, SoundsManager.SOUND_HURT)
 				anim_player.play("hurt")
 	else:
 		return
