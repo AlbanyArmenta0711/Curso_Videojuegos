@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @onready var shoot_marker = $BulletMark
 
-@export var bullet : PackedScene 
-
 @export var MOVEMENT_SPEED = 150.0
 @export var ROTATION_SPEED = 100.0
 
