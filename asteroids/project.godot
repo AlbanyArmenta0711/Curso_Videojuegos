@@ -15,6 +15,10 @@ run/main_scene="uid://dm4ntqnf5jdex"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ObjectMaker="*res://scenes/singletons/ObjectMaker.gd"
+
 [input]
 
 move_left={

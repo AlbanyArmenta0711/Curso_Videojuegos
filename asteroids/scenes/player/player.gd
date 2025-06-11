@@ -15,13 +15,10 @@ func _ready():
 
 #Called every game frame
 func _process(delta): 
-	if(Input.is_action_just_pressed("shoot")):
+	if(Input.is_action_just_pressed("shoot") and can_shoot):
 		can_shoot = false
+		ObjectMaker.create_bullet(rotation - 1.5708, 300, shoot_marker.global_position)
 		
-		var new_bullet = bullet.instantiate()
-		add_child(new_bullet)
-		new_bullet.global_position.x = shoot_marker.global_position.x
-		new_bullet.global_position.y = shoot_marker.global_position.y
 
 #Called every physics frame (for consistent movement due to velocity).
 #not related to game FPS
