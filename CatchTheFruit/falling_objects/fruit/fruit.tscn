@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhrx7dow1hswh"]
 
 [ext_resource type="PackedScene" uid="uid://b0bl3j83xohqv" path="res://falling_objects/falling_object_base.tscn" id="1_qy6wo"]
-[ext_resource type="Script" path="res://falling_objects/fruit/fruit.gd" id="2_vf6r1"]
-[ext_resource type="Texture2D" uid="uid://cecxdkl6qh1xe" path="res://assets/sprites/grape.png" id="3_dqt2k"]
+[ext_resource type="Script" uid="uid://q2j0xg5n1022" path="res://falling_objects/fruit/fruit.gd" id="2_vf6r1"]
+[ext_resource type="Texture2D" uid="uid://cfoqs7x0tgdqo" path="res://assets/sprites/grape.png" id="3_dqt2k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kno06"]
 radius = 64.0078

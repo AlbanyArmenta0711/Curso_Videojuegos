@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dedwxcwms4fms"]
 
 [ext_resource type="LabelSettings" uid="uid://gmtwga8pkljs" path="res://resources/fonts/LG_72_WHITE.tres" id="1_j6c8h"]
-[ext_resource type="Script" path="res://game_over/game_over.gd" id="1_kuaf6"]
+[ext_resource type="Script" uid="uid://cwrifa5xspyho" path="res://game_over/game_over.gd" id="1_kuaf6"]
 [ext_resource type="LabelSettings" uid="uid://c4jgoyscq3sff" path="res://resources/fonts/LG_36_WHITE.tres" id="2_rmn11"]
 
 [sub_resource type="Animation" id="Animation_awdni"]
@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6svvt"]
 _data = {
-"flashing_text": SubResource("Animation_awdni")
+&"flashing_text": SubResource("Animation_awdni")
 }
 
 [node name="GameOver" type="Control"]

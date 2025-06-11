@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1bvq1inyhrhi"]
+
+[ext_resource type="Texture2D" uid="uid://cggjnvvmpjbkw" path="res://assets/player/player_sprite.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cs8gua31nveho" path="res://scenes/player/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://cepkdjyk0ul0e" path="res://scenes/bullets/player_bullet.tscn" id="2_gmlin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
+size = Vector2(29, 25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 14.0
+height = 42.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+bullet = ExtResource("2_gmlin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_g2els")
+debug_color = Color(0.575817, 0.401702, 0.966123, 0.42)
+
+[node name="BulletMark" type="Marker2D" parent="."]
+position = Vector2(0, -22)
+
+[node name="BulletCoolDown" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="BulletCoolDown" to="." method="_on_bullet_cool_down_timeout"]

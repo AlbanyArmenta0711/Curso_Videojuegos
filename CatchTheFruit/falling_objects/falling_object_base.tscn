@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0bl3j83xohqv"]
 
-[ext_resource type="Script" path="res://falling_objects/falling_object_base.gd" id="1_k2kwq"]
+[ext_resource type="Script" uid="uid://c60sbsp0uxuv6" path="res://falling_objects/falling_object_base.gd" id="1_k2kwq"]
 
 [node name="FallingObjectBase" type="Area2D"]
 script = ExtResource("1_k2kwq")

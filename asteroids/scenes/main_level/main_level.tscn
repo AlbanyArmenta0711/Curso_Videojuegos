@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm4ntqnf5jdex"]
+
+[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://assets/background/space.jpg" id="1_8e00y"]
+[ext_resource type="PackedScene" uid="uid://d1bvq1inyhrhi" path="res://scenes/player/player.tscn" id="2_rqn6l"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.25, 330)
+scale = Vector2(0.781271, 0.671429)
+texture = ExtResource("1_8e00y")
+
+[node name="Player" parent="." instance=ExtResource("2_rqn6l")]
+position = Vector2(580, 551)
+MOVEMENT_SPEED = 5000.0
+ROTATION_SPEED = 150.0
