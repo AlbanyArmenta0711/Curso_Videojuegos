@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm4ntqnf5jdex"]
+[gd_scene load_steps=4 format=3 uid="uid://dm4ntqnf5jdex"]
 
 [ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://assets/background/space.jpg" id="1_8e00y"]
 [ext_resource type="PackedScene" uid="uid://d1bvq1inyhrhi" path="res://scenes/player/player.tscn" id="2_rqn6l"]
+[ext_resource type="PackedScene" uid="uid://c4ylko8tjaugm" path="res://scenes/enemy/Enemy.tscn" id="3_48npw"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -14,3 +15,12 @@ texture = ExtResource("1_8e00y")
 position = Vector2(580, 551)
 MOVEMENT_SPEED = 5000.0
 ROTATION_SPEED = 150.0
+
+[node name="Enemy" parent="." instance=ExtResource("3_48npw")]
+position = Vector2(435, 349)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_48npw")]
+position = Vector2(201, 541)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_48npw")]
+position = Vector2(713, 93)

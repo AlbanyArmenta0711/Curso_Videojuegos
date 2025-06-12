@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @onready var shoot_marker = $BulletMark
 
 @export var MOVEMENT_SPEED = 150.0

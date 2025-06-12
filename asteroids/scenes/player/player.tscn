@@ -10,7 +10,7 @@ size = Vector2(29, 25)
 radius = 14.0
 height = 42.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
