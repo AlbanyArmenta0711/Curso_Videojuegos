@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0 
-var game_scene = preload("res://scenes/main_level/main_level.tscn")
+#var game_scene = preload("res://scenes/main_level/main_level.tscn")
 var game_over = false 
 
 func _ready():

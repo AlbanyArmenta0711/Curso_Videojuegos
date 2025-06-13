@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bec1fnbp7rxxy"
-path="res://.godot/imported/Clash_Regular.otf-30faf09344369f98b4ea37fe7c54087e.fontdata"
+path="res://.godot/imported/Clash_Regular.otf-311ed554190671ebb3641e298b6bb5e2.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Clash_Regular.otf"
-dest_files=["res://.godot/imported/Clash_Regular.otf-30faf09344369f98b4ea37fe7c54087e.fontdata"]
+source_file="res://Assets/Clash_Regular.otf"
+dest_files=["res://.godot/imported/Clash_Regular.otf-311ed554190671ebb3641e298b6bb5e2.fontdata"]
 
 [params]
 
