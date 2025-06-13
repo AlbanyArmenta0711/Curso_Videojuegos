@@ -57,3 +57,5 @@ func _on_bullet_cool_down_timeout():
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	print("Player got hit!")
+	SignalManager.on_player_hit.emit()
+	GameManager.game_over = true 

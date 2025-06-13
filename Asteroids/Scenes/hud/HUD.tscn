@@ -1,16 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxbx0f2a27vqo"]
+[gd_scene load_steps=3 format=3 uid="uid://dxbx0f2a27vqo"]
 
 [ext_resource type="LabelSettings" uid="uid://d3si7uxsisf1e" path="res://FontLabels/Clashx36.tres" id="1_w4d2c"]
+[ext_resource type="Script" uid="uid://dhhe3d8gna0s0" path="res://scenes/hud/hud.gd" id="1_xvj7f"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_xvj7f")
 
-[node name="Label" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -230.0
-offset_bottom = 37.0
+offset_left = -250.0
+offset_bottom = 47.0
 grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
-text = "Score: 000"
+text = "Score: 0"
 label_settings = ExtResource("1_w4d2c")

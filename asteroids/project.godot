@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 ObjectMaker="*res://scenes/singletons/ObjectMaker.gd"
+SignalManager="*res://scenes/singletons/SignalManager.gd"
+GameManager="*res://scenes/singletons/GameManager.gd"
 
 [input]
 
