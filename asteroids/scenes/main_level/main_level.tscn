@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm4ntqnf5jdex"]
+[gd_scene load_steps=5 format=3 uid="uid://dm4ntqnf5jdex"]
 
-[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://assets/background/space.jpg" id="1_8e00y"]
-[ext_resource type="PackedScene" uid="uid://d1bvq1inyhrhi" path="res://scenes/player/player.tscn" id="2_rqn6l"]
-[ext_resource type="PackedScene" uid="uid://c4ylko8tjaugm" path="res://scenes/enemy/Enemy.tscn" id="3_48npw"]
+[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://Assets/background/space.jpg" id="1_8e00y"]
+[ext_resource type="PackedScene" uid="uid://d1bvq1inyhrhi" path="res://Scenes/player/player.tscn" id="2_rqn6l"]
+[ext_resource type="PackedScene" uid="uid://c4ylko8tjaugm" path="res://Scenes/enemy/Enemy.tscn" id="3_48npw"]
+[ext_resource type="PackedScene" uid="uid://dxbx0f2a27vqo" path="res://Scenes/hud/HUD.tscn" id="4_ls1v7"]
 
 [node name="MainLevel" type="Node2D"]
 
@@ -24,3 +25,5 @@ position = Vector2(201, 541)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_48npw")]
 position = Vector2(713, 93)
+
+[node name="Hud2" parent="." instance=ExtResource("4_ls1v7")]

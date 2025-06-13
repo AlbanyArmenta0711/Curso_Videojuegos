@@ -12,3 +12,8 @@ func _process(delta):
 
 func _on_bullet_cool_down_timeout():
 	ObjectMaker.create_enemy_bullet(rotation, shoot_marker.global_position)
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	print("Enemy got hit")
+	queue_free()

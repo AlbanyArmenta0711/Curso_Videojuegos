@@ -4,7 +4,6 @@ extends Node
 @export var enemy_bullet = preload("res://scenes/enemy/EnemyBullet.tscn")
 
 func create_bullet(angle : float, speed : float, marker_pos : Vector2):
-	print("Fire!")
 	var new_bullet = player_bullet.instantiate()
 	var direction = Vector2(cos(angle), sin(angle))
 	new_bullet.setup_bullet(direction, speed)
@@ -13,7 +12,6 @@ func create_bullet(angle : float, speed : float, marker_pos : Vector2):
 	get_tree().root.add_child(new_bullet)
 
 func create_enemy_bullet(angle : float, marker_pos : Vector2): 
-	print("Enemy Fire!")
 	var new_bullet = enemy_bullet.instantiate()
 	var direction = Vector2(cos(angle), sin(angle))
 	new_bullet.setup_enemy_bullet(direction)
