@@ -1,17 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://dm4ntqnf5jdex"]
 
-[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://Assets/background/space.jpg" id="1_8e00y"]
-[ext_resource type="PackedScene" uid="uid://d1bvq1inyhrhi" path="res://Scenes/player/player.tscn" id="2_rqn6l"]
-[ext_resource type="PackedScene" uid="uid://c4ylko8tjaugm" path="res://Scenes/enemy/Enemy.tscn" id="3_48npw"]
-[ext_resource type="PackedScene" uid="uid://dxbx0f2a27vqo" path="res://Scenes/hud/HUD.tscn" id="4_ls1v7"]
-[ext_resource type="PackedScene" uid="uid://dxe858jiuvmdy" path="res://Scenes/enemy/Spawner.tscn" id="5_812nd"]
-[ext_resource type="PackedScene" uid="uid://8uncr0boxw1j" path="res://Scenes/game_over/game_over.tscn" id="6_viwm5"]
+[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://assets/background/space.jpg" id="1_8e00y"]
+[ext_resource type="PackedScene" uid="uid://d1bvq1inyhrhi" path="res://scenes/player/player.tscn" id="2_rqn6l"]
+[ext_resource type="PackedScene" uid="uid://c4ylko8tjaugm" path="res://scenes/enemy/Enemy.tscn" id="3_48npw"]
+[ext_resource type="PackedScene" uid="uid://dxbx0f2a27vqo" path="res://scenes/hud/HUD.tscn" id="4_ls1v7"]
+[ext_resource type="PackedScene" uid="uid://dxe858jiuvmdy" path="res://scenes/enemy/Spawner.tscn" id="5_812nd"]
+[ext_resource type="PackedScene" uid="uid://8uncr0boxw1j" path="res://scenes/game_over/game_over.tscn" id="6_viwm5"]
 
 [node name="MainLevel" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577.25, 330)
-scale = Vector2(0.781271, 0.671429)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1479.0
+offset_bottom = 980.0
 texture = ExtResource("1_8e00y")
 
 [node name="Player" parent="." instance=ExtResource("2_rqn6l")]

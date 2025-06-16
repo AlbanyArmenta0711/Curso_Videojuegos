@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxbx0f2a27vqo"]
 
 [ext_resource type="LabelSettings" uid="uid://d3si7uxsisf1e" path="res://FontLabels/Clashx36.tres" id="1_w4d2c"]
-[ext_resource type="Script" uid="uid://dhhe3d8gna0s0" path="res://Scenes/hud/hud.gd" id="1_xvj7f"]
+[ext_resource type="Script" uid="uid://dhhe3d8gna0s0" path="res://scenes/hud/hud.gd" id="1_xvj7f"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_xvj7f")

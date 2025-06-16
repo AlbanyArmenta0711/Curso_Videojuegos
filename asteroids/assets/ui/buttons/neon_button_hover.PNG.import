@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://22r5137ei53w"
-path="res://.godot/imported/space.jpg-e94399b3365fb097277f5f85bb550ad4.ctex"
+uid="uid://3eqmu6vw5wem"
+path="res://.godot/imported/neon_button_hover.PNG-2b61bbcfeec37f0142c05d1646d8b0ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/space.jpg"
-dest_files=["res://.godot/imported/space.jpg-e94399b3365fb097277f5f85bb550ad4.ctex"]
+source_file="res://assets/ui/buttons/neon_button_hover.PNG"
+dest_files=["res://.godot/imported/neon_button_hover.PNG-2b61bbcfeec37f0142c05d1646d8b0ab.ctex"]
 
 [params]
 

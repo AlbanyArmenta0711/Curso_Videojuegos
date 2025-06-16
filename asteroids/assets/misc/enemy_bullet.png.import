@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dju5mgsv2mmy3"
-path="res://.godot/imported/enemy_bullet.png-fda6e7d2bbc9b96c5757e6ddab5652fc.ctex"
+path="res://.godot/imported/enemy_bullet.png-e48ca9605740e789d57873fa6b3ea877.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/misc/enemy_bullet.png"
-dest_files=["res://.godot/imported/enemy_bullet.png-fda6e7d2bbc9b96c5757e6ddab5652fc.ctex"]
+source_file="res://assets/misc/enemy_bullet.png"
+dest_files=["res://.godot/imported/enemy_bullet.png-e48ca9605740e789d57873fa6b3ea877.ctex"]
 
 [params]
 

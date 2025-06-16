@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 var can_press_space
 
 func _ready():
@@ -12,7 +11,7 @@ func _process(delta):
 		print("Starting game again")
 		can_press_space = false 
 		get_tree().paused = false 
-		GameManager.load_game_scene()
+		GameManager.on_return_to_menu()
 	
 func on_player_hit():
 	get_tree().paused = true 

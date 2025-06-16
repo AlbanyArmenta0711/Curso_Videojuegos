@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcipd5k5tohvi"
+path="res://.godot/imported/Kingdom Hearts 2 - Dearly Beloved II.mp3-4589558aeabf6d33a18ef3e3f9f5b904.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Kingdom Hearts 2 - Dearly Beloved II.mp3"
+dest_files=["res://.godot/imported/Kingdom Hearts 2 - Dearly Beloved II.mp3-4589558aeabf6d33a18ef3e3f9f5b904.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
