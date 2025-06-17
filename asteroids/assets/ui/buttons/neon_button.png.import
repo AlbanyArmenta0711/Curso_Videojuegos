@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://22r5137ei53w"
-path="res://.godot/imported/space.jpg-28ce73f49e56723da946d823017b35b7.ctex"
+uid="uid://dsl7rhqcogiix"
+path="res://.godot/imported/neon_button.png-35ccccc5ed7aab3d6d2b3f9e35671fd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/background/space.jpg"
-dest_files=["res://.godot/imported/space.jpg-28ce73f49e56723da946d823017b35b7.ctex"]
+source_file="res://Assets/ui/buttons/neon_button.png"
+dest_files=["res://.godot/imported/neon_button.png-35ccccc5ed7aab3d6d2b3f9e35671fd6.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="asteroids"
-run/main_scene="uid://dm4ntqnf5jdex"
+run/main_scene="uid://b22lric6btdm6"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 ObjectMaker="*res://scenes/singletons/ObjectMaker.gd"
 SignalManager="*res://scenes/singletons/SignalManager.gd"
 GameManager="*res://scenes/singletons/GameManager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=800
 
 [input]
 

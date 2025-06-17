@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bx6qukew1vf4c"]
 
-[ext_resource type="FontFile" uid="uid://bec1fnbp7rxxy" path="res://assets/fonts/Clash_Regular.otf" id="1_ul3v4"]
+[ext_resource type="FontFile" uid="uid://bec1fnbp7rxxy" path="res://assets/Clash_Regular.otf" id="1_ul3v4"]
 
 [resource]
 font = ExtResource("1_ul3v4")
