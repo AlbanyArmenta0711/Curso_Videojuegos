@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://b22lric6btdm6"]
 
-[ext_resource type="Script" uid="uid://d3ohalvcw6csw" path="res://scenes/main_menu/main_menu.gd" id="1_oitky"]
-[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://assets/background/space.jpg" id="1_qmweu"]
-[ext_resource type="FontFile" uid="uid://bec1fnbp7rxxy" path="res://assets/Clash_Regular.otf" id="2_f1mbi"]
-[ext_resource type="Texture2D" uid="uid://dsl7rhqcogiix" path="res://assets/ui/buttons/neon_button.png" id="3_oitky"]
+[ext_resource type="Script" uid="uid://d3ohalvcw6csw" path="res://Scenes/main_menu/main_menu.gd" id="1_oitky"]
+[ext_resource type="Texture2D" uid="uid://22r5137ei53w" path="res://Assets/background/space.jpg" id="1_qmweu"]
+[ext_resource type="FontFile" uid="uid://bec1fnbp7rxxy" path="res://Assets/Clash_Regular.otf" id="2_f1mbi"]
+[ext_resource type="Texture2D" uid="uid://dsl7rhqcogiix" path="res://Assets/ui/buttons/neon_button.png" id="3_oitky"]
 [ext_resource type="LabelSettings" uid="uid://bx6qukew1vf4c" path="res://FontLabels/Clashx48.tres" id="4_wckin"]
-[ext_resource type="AudioStream" uid="uid://dcipd5k5tohvi" path="res://assets/sounds/Kingdom Hearts 2 - Dearly Beloved II.mp3" id="5_f1mbi"]
-[ext_resource type="Texture2D" uid="uid://3eqmu6vw5wem" path="res://assets/ui/buttons/neon_button_hover.PNG" id="5_wckin"]
+[ext_resource type="AudioStream" uid="uid://dcipd5k5tohvi" path="res://Assets/sounds/Kingdom Hearts 2 - Dearly Beloved II.mp3" id="5_f1mbi"]
+[ext_resource type="Texture2D" uid="uid://3eqmu6vw5wem" path="res://Assets/ui/buttons/neon_button_hover.PNG" id="5_wckin"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_arvcj"]
 font = ExtResource("2_f1mbi")
@@ -15,52 +15,48 @@ font_color = Color(0.415686, 0.796078, 0.556863, 1)
 outline_size = 7
 outline_color = Color(0, 0.196078, 0, 1)
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -739.5
+offset_top = -490.0
+offset_right = 739.5
+offset_bottom = 490.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oitky")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 texture = ExtResource("1_qmweu")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f1mbi")
+autoplay = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Alien Attack!"
 label_settings = SubResource("LabelSettings_arvcj")
 horizontal_alignment = 1
 
-[node name="StartButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("3_oitky")
 texture_hover = ExtResource("5_wckin")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartButton"]
+[node name="Label" type="Label" parent="VBoxContainer/StartButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,12 +72,12 @@ grow_vertical = 2
 text = "Start"
 label_settings = ExtResource("4_wckin")
 
-[node name="ExitButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_oitky")
 texture_hover = ExtResource("5_wckin")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ExitButton"]
+[node name="Label" type="Label" parent="VBoxContainer/ExitButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,9 +93,5 @@ grow_vertical = 2
 text = "Exit"
 label_settings = ExtResource("4_wckin")
 
-[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_f1mbi")
-autoplay = true
-
-[connection signal="button_down" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]

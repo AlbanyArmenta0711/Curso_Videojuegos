@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dcipd5k5tohvi"
-path="res://.godot/imported/Kingdom Hearts 2 - Dearly Beloved II.mp3-4589558aeabf6d33a18ef3e3f9f5b904.mp3str"
+path="res://.godot/imported/Kingdom Hearts 2 - Dearly Beloved II.mp3-0d393fba7a171797ab847ba53a15f390.mp3str"
 
 [deps]
 
-source_file="res://assets/sounds/Kingdom Hearts 2 - Dearly Beloved II.mp3"
-dest_files=["res://.godot/imported/Kingdom Hearts 2 - Dearly Beloved II.mp3-4589558aeabf6d33a18ef3e3f9f5b904.mp3str"]
+source_file="res://Assets/sounds/Kingdom Hearts 2 - Dearly Beloved II.mp3"
+dest_files=["res://.godot/imported/Kingdom Hearts 2 - Dearly Beloved II.mp3-0d393fba7a171797ab847ba53a15f390.mp3str"]
 
 [params]
 
