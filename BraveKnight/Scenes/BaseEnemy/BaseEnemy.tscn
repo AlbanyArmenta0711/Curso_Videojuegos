@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dra6p366ehrd3"]
+
+[ext_resource type="Script" uid="uid://bsnnrscyywuqp" path="res://Scenes/BaseEnemy/base_enemy.gd" id="1_nknsj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_amppy"]
+radius = 127.004
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nknsj"]
+size = Vector2(26, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp4yj"]
+size = Vector2(10, 13)
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_nknsj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_amppy")
+debug_color = Color(0.219023, 0.639103, 0, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nknsj")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_kp4yj")
+debug_color = Color(0.876028, 0.000418738, 0.833986, 0.42)
+
+[node name="PatrolTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
