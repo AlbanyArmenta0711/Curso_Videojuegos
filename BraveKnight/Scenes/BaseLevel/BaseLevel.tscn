@@ -406,6 +406,3 @@ tile_set = SubResource("TileSet_3ok8t")
 [node name="Player" parent="." instance=ExtResource("1_4ea85")]
 position = Vector2(569, 543)
 scale = Vector2(2, 2)
-walk_speed = null
-gravity = null
-jump_speed = null
