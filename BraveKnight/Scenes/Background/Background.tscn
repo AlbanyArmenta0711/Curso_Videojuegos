@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://nbgvun6utve2"]
+
+[ext_resource type="Texture2D" uid="uid://d2r50cx11rko1" path="res://Assets/Background/Background_0.png" id="1_m0ouw"]
+[ext_resource type="Texture2D" uid="uid://ctehb2eckf8sh" path="res://Assets/Background/Background_1.png" id="2_dyxss"]
+[ext_resource type="Texture2D" uid="uid://cknc41xmftdjs" path="res://Assets/Background/Grass_background_1.png" id="3_334ed"]
+[ext_resource type="Texture2D" uid="uid://btud5lcdwenpa" path="res://Assets/Background/Grass_background_2.png" id="4_37g1c"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Sky2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky2"]
+position = Vector2(1153, 207)
+texture = ExtResource("1_m0ouw")
+flip_h = true
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(385, 209)
+texture = ExtResource("1_m0ouw")
+
+[node name="Church" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Church"]
+position = Vector2(385, 207)
+texture = ExtResource("2_dyxss")
+
+[node name="Bush1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(704, 0)
+
+[node name="Tree" type="Sprite2D" parent="Bush1"]
+position = Vector2(174, 302)
+texture = ExtResource("4_37g1c")
+
+[node name="Bush" type="Sprite2D" parent="Bush1"]
+position = Vector2(526, 302)
+texture = ExtResource("3_334ed")

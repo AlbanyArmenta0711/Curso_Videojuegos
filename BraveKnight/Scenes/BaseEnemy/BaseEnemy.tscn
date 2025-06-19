@@ -31,7 +31,7 @@ shape = SubResource("RectangleShape2D_nknsj")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("RectangleShape2D_kp4yj")
@@ -39,5 +39,3 @@ debug_color = Color(0.876028, 0.000418738, 0.833986, 0.42)
 
 [node name="PatrolTimer" type="Timer" parent="."]
 wait_time = 3.0
-
-[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

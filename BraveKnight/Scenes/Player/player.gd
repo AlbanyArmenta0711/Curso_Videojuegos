@@ -5,17 +5,23 @@ class_name Player
 @export var walk_speed = 3000.0
 @export var gravity = 1500.0
 @export var jump_speed = 1000.0
+@export var strength = 1.0
 
 @onready var anim_sprite = $AnimatedSprite2D
 @onready var floor_detector = $FloorDetector
 @onready var sword_hitbox = $SwordHitBox
 @onready var sword_hitbox_collision = $SwordHitBox/CollisionShape2D
+@onready var invincible_timer = $InvincibleTimer
 
 enum PLAYER_STATES { IDLE, RUN, HURT, DEATH, ATTACK, JUMP, FALL }
 
 var current_state : PLAYER_STATES = PLAYER_STATES.IDLE
 var is_on_ground = false 
 var is_attacking = false
+var is_hurt = false
+
+var hit_direction: Vector2
+var hit_force: float = 1.5
 
 var direction_changed = false
 
@@ -30,30 +36,33 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func get_input(delta):
-	
-	if (Input.is_action_pressed("move_left")):
-		if anim_sprite.flip_h == false: 
-			anim_sprite.flip_h = true
-			sword_hitbox_collision.position.x = sword_hitbox_collision.position.x * -1
-		velocity.x = -walk_speed * delta
-	elif (Input.is_action_pressed("move_right")):
-		if anim_sprite.flip_h == true:
-			anim_sprite.flip_h = false
-			sword_hitbox_collision.position.x = sword_hitbox_collision.position.x * -1
-		velocity.x = walk_speed * delta
-	
+	if not is_hurt:
+		if (Input.is_action_pressed("move_left")):
+			if anim_sprite.flip_h == false: 
+				anim_sprite.flip_h = true
+				sword_hitbox_collision.position.x = sword_hitbox_collision.position.x * -1
+			velocity.x = -walk_speed * delta
+		elif (Input.is_action_pressed("move_right")):
+			if anim_sprite.flip_h == true:
+				anim_sprite.flip_h = false
+				sword_hitbox_collision.position.x = sword_hitbox_collision.position.x * -1
+			velocity.x = walk_speed * delta
+		
+		else:
+			velocity.x = 0
+			
+		if (Input.is_action_just_pressed("jump") and is_on_ground):
+			velocity.y = -jump_speed
+			
+		if (Input.is_action_just_pressed("attack") and not is_attacking):
+			is_attacking = true
+			set_state(PLAYER_STATES.ATTACK)
 	else:
-		velocity.x = 0
+		velocity = hit_direction * walk_speed * delta * hit_force
 		
-	if (Input.is_action_just_pressed("jump") and is_on_ground):
-		velocity.y = -jump_speed
-		
-	if (Input.is_action_just_pressed("attack") and not is_attacking):
-		is_attacking = true
-		set_state(PLAYER_STATES.ATTACK)
 	
 func calculate_state():
-	if not is_attacking:
+	if not is_attacking and not is_hurt:
 		if is_on_ground:
 			if velocity.x == 0:
 				set_state(PLAYER_STATES.IDLE)
@@ -82,6 +91,8 @@ func set_state(new_state : PLAYER_STATES):
 				sword_hitbox.monitorable = true 
 				sword_hitbox.monitoring = true
 				anim_sprite.play("attack")
+			PLAYER_STATES.HURT:
+				anim_sprite.play("hurt")
 	
 func check_is_on_ground():
 	if(floor_detector.is_colliding()):
@@ -100,4 +111,19 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		sword_hitbox.monitorable = false 
 		sword_hitbox.monitoring = false
 		set_state(PLAYER_STATES.IDLE)
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	set_state(PLAYER_STATES.HURT)
+	is_hurt = true
+	invincible_timer.start()
+	hit_direction = ((area.global_position - global_position) * -1).normalized()
+	var tween = create_tween()
+	tween.tween_property(anim_sprite,"self_modulate",Color(1, 0.5, 0), 0.25)
+	tween.tween_property(anim_sprite,"self_modulate",Color.WHITE, 0.25)
+	tween.tween_property(anim_sprite,"self_modulate",Color(1, 0.5, 0), 0.25)
+	tween.tween_property(anim_sprite,"self_modulate",Color.WHITE, 0.25)
 	
+func _on_invincible_timer_timeout() -> void:
+	set_state(PLAYER_STATES.IDLE)
+	is_hurt = false
+	is_attacking = false

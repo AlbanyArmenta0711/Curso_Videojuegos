@@ -382,14 +382,7 @@ shape = SubResource("CapsuleShape2D_fk5o5")
 debug_color = Color(0.760126, 0.338315, 0.764413, 0.42)
 
 [node name="InvincibleTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_bottom = 520
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
